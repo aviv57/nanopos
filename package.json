@@ -1,7 +1,7 @@
 {
-  "name": "nanopos",
-  "version": "0.1.3",
-  "description": "A simple Lightning point-of-sale system, powered by Lightning Charge.",
+  "name": "bitembassy-nanopos",
+  "private": true,
+  "description": "Tel Aviv Bitcoin emBassy POS",
   "bin": "dist/cli.js",
   "scripts": {
     "start": "./start.sh",
@@ -12,15 +12,8 @@
     "dist",
     "views"
   ],
-  "repository": "https://github.com/ElementsProject/nanopos.git",
-  "keywords": [
-    "bitcoin",
-    "lightning",
-    "lightning-charge",
-    "PoS",
-    "point-of-sale"
-  ],
-  "author": "Nadav Ivgi",
+  "repository": "https://github.com/bitembassy/nanopos.git",
+  "author": "Tel Aviv Bitcoin emBassy",
   "license": "MIT",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
