@@ -1,18 +1,17 @@
-Small Bamba:
-  price: 7
-
-Big Bamba:
-  price: 10
-
+Chocolate Snack:
+  price: 6
+  
+Small Snack/Big Bamba:
+  price: 6.5
+  
+Sunflower Seeds:
+  price: 7.5
+ 
 Small Beer:
   price: 12
 
 Big Beer:
   price: 15
 
-Chocolate:
-  price: 6
-
-Sunflower seeds:
-  price: 12
-
+Fancy Snack:
+  price: 17
