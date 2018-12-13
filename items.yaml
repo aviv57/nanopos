@@ -1,17 +1,15 @@
-Chocolate Snack:
+Tea ☕:
+  price: 0.5
+Peanut Snake 🥜:
+  price: 4
+Chocolate Snack 🍫:
   price: 6
   
-Small Snack/Big Bamba:
+Small Snack/Big Bamba 🍟:
   price: 6.5
-  
-Sunflower Seeds:
-  price: 7.5
  
-Small Beer:
+Small Beer 🍺:
   price: 12
 
-Big Beer:
+Big Beer 🍺🍺:
   price: 15
-
-Fancy Snack:
-  price: 17
