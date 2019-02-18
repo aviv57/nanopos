@@ -1,13 +1,13 @@
-Tea ☕:
-  price: 0.5
+#Tea ☕:
+#  price: 0.5
 
 Peanut Snack 🥜:
   price: 4
 
-Chocolate Snack 🍫:
+Chocolate 🍫:
   price: 6
-  
-Small Snack/Big Bamba 🍟:
+
+Snack/Bamba 🍟:
   price: 6.5
  
 Small Beer 🍺:
@@ -15,3 +15,27 @@ Small Beer 🍺:
 
 Big Beer 🍺🍺:
   price: 15
+
+Shirt 👕:
+  price: 45
+
+Hat 🎩:
+  price: 70
+
+Hoodie 👚:
+  price: 65
+
+Bitcoin Pin 📍:
+  price: 50
+
+Red ❤️:
+  price: 0.01
+  lightColor: red
+
+Green 💚:
+  price: 0.01
+  lightColor: green
+
+Blue 💙:
+  price: 0.01
+  lightColor: blue

@@ -43,12 +43,15 @@ app.post('/invoice', pwrap(async (req, res) => {
 
   if (!item) return res.sendStatus(404)
 
+  const metadata = { source: 'nanopos', item: req.body.item }
+  if (item.lightColor) metadata.lightColor = item.lightColor
+
   const inv = await charge.invoice({
     amount: item.price
   , currency: item.price ? app.settings.currency : null
   , description: `${ app.settings.title }${ item.title ? ': ' + item.title : '' }`
   , expiry: 599
-  , metadata: { source: 'nanopos', item: req.body.item }
+  , metadata
   })
   res.send(only(inv, 'id payreq msatoshi quoted_currency quoted_amount expires_at'))
 }))
