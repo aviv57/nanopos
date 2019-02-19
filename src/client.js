@@ -51,6 +51,9 @@ const listen = (invid, cb) => {
 const success = _ => {
   const diag = $(paidDialog()).modal()
   setTimeout(_ => diag.modal('hide'), 5000)
+  var audio = new Audio('https://embassy-sounds.netlify.com/'+ (Math.floor(Math.random() * 23) + 1) + '.mp3');
+  audio.play();
+  
 }
 
 const updateExp = el => {
