@@ -1,7 +1,7 @@
 # Tel Aviv Bitcoin emBassy POS
 
 Source files for the Tel-Aviv Bitcoin emBassy POS,
-based on [nanopos](https://https://github.com/ElementsProject/nanopos).
+based on [nanopos](https://github.com/ElementsProject/nanopos).
 
 ## Setup
 
