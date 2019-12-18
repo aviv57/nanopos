@@ -6,6 +6,7 @@ const $ = require('jquery')
 
 const payDialog  = require('../views/payment.pug')
     , paidDialog = require('../views/success.pug')
+    , btcpayDialog = require('../views/btcpay_modal.pug')
 
 const csrf = $('meta[name=csrf]').attr('content')
 
@@ -56,7 +57,7 @@ const success = _ => {
   setTimeout(_ => diag.modal('hide'), 5000)
   var audio = new Audio('https://embassy-sounds.netlify.com/'+ (Math.floor(Math.random() * 23) + 1) + '.mp3');
   audio.play();
-  
+
 }
 
 const updateExp = el => {
@@ -76,3 +77,38 @@ setInterval(_ =>
 , 1000)
 
 $(document).on('hidden.bs.modal', '.modal', e => $(e.target).remove())
+
+// Custom payment with BTCPay
+
+$('[data-buy-btcpay').click(e => {
+  e.preventDefault()
+  const btcpayModal = $(btcpayDialog()).modal()
+
+  btcpayModal.on('shown.bs.modal', _ => {
+    $('#btcpay_iframe').on("load", _ => {
+      $('.spinner-border').hide()
+      $('#btcpay_iframe').animate({ 'height': '711' })
+    })
+    $('[data-btcpay-form').submit()
+  })
+
+  btcpayModal.on('hidden.bs.modal', _ => {
+    $('#btcpay-input-price').val('')
+    $("[name='orderId']").val('')
+    $('[data-buy-btcpay').prop('disabled', true);
+  })
+})
+
+$("#btcpay-input-price").keyup(_ => {
+  const amount = $("#btcpay-input-price").val()
+  $('[data-buy-btcpay').prop('disabled', isNaN(parseFloat(amount)) || amount <= 0);
+})
+
+// Messages from invoice iframe
+const receiveMessage = event => {
+  if (event.origin !== "https://btcpay.ln.bitembassy.org") return
+  if (typeof event.data.status !== "undefined")
+    if (event.data.status == 'paid' || event.data.status == 'complete')
+      setTimeout(_ => $('#btcpayModal').modal('hide'), 4000)
+}
+window.addEventListener("message", receiveMessage, false);

@@ -1,0 +1,14 @@
+.modal.fade.btcpay#btcpayModal(role='dialog')
+    .modal-dialog(role='document' style="width:334px;")
+        .modal-content
+            .modal-header
+                h5.modal-title Pay with BTC or Lightning
+                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                    span(aria-hidden='true') &times;
+            .modal-body.btcpay-modal-body
+                .text-center
+                    .spinner-border.text-warning(role="status" style="width: 8rem; height: 8rem;")
+                        span.sr-only Loading...
+                iframe#btcpay_iframe(name='btcpay_iframe' height="0" frameborder="0" scrolling="no")
+            .modal-footer
+                button.btn.btn-primary(type='button' data-dismiss='modal') Close
