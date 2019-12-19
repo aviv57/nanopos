@@ -14,10 +14,10 @@ app.set('host', process.env.HOST || 'localhost')
 app.set('title', process.env.TITLE || 'Lightning Nano POS')
 app.set('currency', process.env.CURRENCY || 'BTC')
 app.set('theme', process.env.THEME || 'yeti')
-app.set('custom_amount', !process.env.NO_CUSTOM)
+app.set('custom_amount', !(process.env.NO_CUSTOM == '1'))
 app.set('views', path.join(__dirname, '..', 'views'))
 app.set('trust proxy', process.env.PROXIED || 'loopback')
-app.set('custom_amount_btcpay', process.env.CUSTOM_AMOUNT_BTCPAY)
+app.set('custom_amount_btcpay', (process.env.CUSTOM_AMOUNT_BTCPAY == '1'))
 app.locals.btcpay_url = process.env.BTCPAY_URL
 app.locals.btcpay_store_id = process.env.BTCPAY_STORE_ID
 app.locals.formatFiat = fiatFormatter(app.settings.currency)
