@@ -1,5 +1,5 @@
 h5.text-muted Bitcoin or Lightning
-form#btcpay_form(data-btcpay-form method='POST' target='btcpay_iframe' action='https://btcpay.ln.bitembassy.org/api/v1/invoices') 
+form#btcpay_form(data-btcpay-form method='POST' target='btcpay_iframe' action=req.app.locals.btcpay_url+ '/api/v1/invoices') 
     input(type='hidden' name='storeId' value=req.app.locals.btcpay_store_id)
     .row: .col: .form-group: .input-group
         input.form-control#btcpay-input-price(name='price' placeholder='amount' step='any' min='0')
