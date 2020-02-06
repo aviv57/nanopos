@@ -1,13 +1,13 @@
-h5.text-muted Pay on-chain or with Lightning
-form#btcpay_form(data-btcpay-form method='POST' target='btcpay_iframe' action=req.app.locals.btcpay_url+ '/api/v1/invoices') 
+h5.text-muted Standard ⛓️ or Lightning ⚡️ payment 
+form#btcpay_form(data-btcpay-form method='POST' target='btcpay_iframe' action=req.app.locals.btcpay_url+ '/api/v1/invoices')
     input(type='hidden' name='storeId' value=req.app.locals.btcpay_store_id)
     .form-group.mb-2: .input-group
-        input.form-control#btcpay-input-price(name='price' placeholder='amount' step='any' min='0')
+        input.form-control#btcpay-input-price(name='price' placeholder='amount' step='any' min='0' type='number')
         .input-group-append
             select(name='currency')
                 option ILS
                 option BTC
                 option USD
     .form-group: .input-group
-        input.form-control.mr-2(placeholder='notes?' name='orderId' value='') 
-        button.btn.btn-primary(data-buy-btcpay disabled style="font-weight: bold;") ⚡️ Pay ⚡️ 
+        input.form-control.mr-2(placeholder='notes?' name='orderId' value='')
+        button.btn.btn-primary(data-buy-btcpay disabled style="font-weight: bold;") Pay
