@@ -47,6 +47,7 @@ app.post('/invoice', pwrap(async (req, res) => {
 
   const metadata = { source: 'nanopos', item: req.body.item }
   if (item.lightColor) metadata.lightColor = item.lightColor
+  if (item.skullEffect) metadata.skullEffect = item.skullEffect
 
   const inv = await charge.invoice({
     amount: item.price
